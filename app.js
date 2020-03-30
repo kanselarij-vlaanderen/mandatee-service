@@ -16,6 +16,7 @@ app.get('/', function( req, res ) {
 
 app.get('/mandateeIsCompetentOnFutureAgendaItem', async (req,res) => {
   const mandateeEndDate = req.query.date;
-  const queryResult = await repository.mandateeIsCompetentOnFutureAgendaItem(mandateeEndDate);
+  const mandateeId = req.query.mandateeId;
+  const queryResult = await repository.mandateeIsCompetentOnFutureAgendaItem(mandateeEndDate,mandateeId);
   return res.send(queryResult);
 });
