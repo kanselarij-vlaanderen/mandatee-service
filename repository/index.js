@@ -20,8 +20,8 @@ const mandateeIsCompetentOnFutureAgendaItem = async (endDateOfMandee, mandateeId
   ?agendaPunt a besluit:Agendapunt .
   ?agenda dct:hasPart ?agendaPunt.
   ?agenda a besluitvorming:Agenda .
-  ?agenda besluit:isAangemaaktVoor ?zitting .
-  ?zitting a besluit:Zitting .
+  ?agenda besluitvorming:isAgendaVoor ?zitting .
+  ?zitting a besluit:Vergaderactiviteit .
   ?zitting besluit:geplandeStart ?geplandeStart .
   FILTER (?geplandeStart > ${sparqlEscapeDate(endDateOfMandee)})
   }`;
