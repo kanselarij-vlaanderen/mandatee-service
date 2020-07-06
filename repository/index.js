@@ -16,7 +16,7 @@ const mandateeIsCompetentOnFutureAgendaItem = async (endDateOfMandee, mandateeId
   ?procedurestap besluitvorming:heeftBevoegde ?mandataris .
   ?mandataris a mandaat:Mandataris .
   ?mandataris mu:uuid ${sparqlEscapeString(mandateeId)} .
-  ?procedurestap besluitvorming:isGeagendeerdVia ?agendaPunt .
+  ?procedurestap ^besluitvorming:vindtPlaatsTijdens / besluitvorming:genereertAgendapunt ?agendapunt .
   ?agendaPunt a besluit:Agendapunt .
   ?agenda dct:hasPart ?agendaPunt.
   ?agenda a besluitvorming:Agenda .
