@@ -5,14 +5,14 @@ const mandateeIsCompetentOnFutureAgendaItem = async (endDateOfMandee, mandateeId
   const query = `
   PREFIX besluitvorming: <http://data.vlaanderen.be/ns/besluitvorming#>
   PREFIX mu: <http://mu.semte.ch/vocabularies/core/>
-  PREFIX dbpedia: <http://dbpedia.org/ontology/>
   PREFIX mandaat: <http://data.vlaanderen.be/ns/mandaat#>
   PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
   PREFIX dct: <http://purl.org/dc/terms/>
+  PREFIX dossier: <https://data.vlaanderen.be/ns/dossier#>
 
 
   ASK WHERE {
-  ?procedurestap a dbpedia:UnitOfWork .
+  ?procedurestap a dossier:Procedurestap .
   ?procedurestap besluitvorming:heeftBevoegde ?mandataris .
   ?mandataris a mandaat:Mandataris .
   ?mandataris mu:uuid ${sparqlEscapeString(mandateeId)} .
