@@ -9,11 +9,11 @@ const mandateeIsCompetentOnFutureAgendaItem = async (endDateOfMandee, mandateeId
   PREFIX besluit: <http://data.vlaanderen.be/ns/besluit#>
   PREFIX dct: <http://purl.org/dc/terms/>
   PREFIX dossier: <https://data.vlaanderen.be/ns/dossier#>
-
+  PREFIX ext:  <http://mu.semte.ch/vocabularies/ext/>
 
   ASK WHERE {
   ?procedurestap a dossier:Procedurestap .
-  ?procedurestap besluitvorming:heeftBevoegde ?mandataris .
+  ?procedurestap ext:heeftBevoegde ?mandataris .
   ?mandataris a mandaat:Mandataris .
   ?mandataris mu:uuid ${sparqlEscapeString(mandateeId)} .
   ?procedurestap ^besluitvorming:vindtPlaatsTijdens / besluitvorming:genereertAgendapunt ?agendapunt .
